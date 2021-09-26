@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    display: flex;
+    background-color: honeydew;
+    background-image: url("img/world.png");
+    background-size: contain;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Lato', sans-serif;
+}
+
+#container {
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+
+#head-row {
+    justify-content: center;
+    align-items: center;
+}
+
+#game-container {
+    display: block;
+    font-size: 20pt;
+    justify-content: center;
+    align-items: center;
+    background-color: blanchedalmond;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+div[id^="row"] {
+    display: flex;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.flashcard {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    margin: 5px;
+    border-radius: 10px;
+    border: chocolate;
+    background-color: chocolate;
+    justify-content: center;
+    flex-grow: 1;
+    width: 150px;
+    height: 150px;
+    position: relative;
+    transition: all 0.5s linear;
+    transform-style: preserve-3d;
+}
+
+.quest, .answer {
+    margin: 3px;
+    width: 150px;
+    height: 150px;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    position: absolute;
+}
+
+.quest {
+    z-index: 2;
+    backface-visibility: hidden;
+    background: darkgreen;
+}
+
+.answer {
+    z-index: 1;
+    transform: rotateY(180deg);
+    background: forestgreen;
+}
+
+.card-container:hover .flashcard {
+    transform: rotateY(180deg);
+}
+
+.card-container {
+    perspective: 1000px;
+}
